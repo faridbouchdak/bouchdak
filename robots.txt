@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://bouchdak.com/sitemap.xml
+
+# Allow all robots complete access
+# Crawl-delay is not specified to allow search engines to determine optimal rate

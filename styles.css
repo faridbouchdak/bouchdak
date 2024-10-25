@@ -1,0 +1,97 @@
+/* Base styles */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bouchdak {
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.bouchdak:hover {
+  transform: scale(1.1);
+}
+
+.bouchdak::before {
+  content: '@';
+  position: absolute;
+  left: 50%;
+  top: -0.8em;
+  transform: translateX(-50%);
+  animation: float-mobile 3s ease-in-out infinite;
+}
+
+p {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+}
+
+@keyframes float-mobile {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Gradients */
+.gradient-0 {
+  background: linear-gradient(to bottom right, #9333ea, #ec4899, #fb923c);
+}
+
+.gradient-1 {
+  background: linear-gradient(to bottom right, #3b82f6, #2dd4bf, #4ade80);
+}
+
+.gradient-2 {
+  background: linear-gradient(to bottom right, #ef4444, #facc15, #ec4899);
+}
+
+.gradient-3 {
+  background: linear-gradient(to bottom right, #4f46e5, #9333ea, #ec4899);
+}
+
+@media (min-width: 768px) {
+  .bouchdak {
+    font-size: 8rem;
+  }
+  
+  .bouchdak::before {
+    left: -0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float-desktop 3s ease-in-out infinite;
+  }
+  
+  @keyframes float-desktop {
+    0%, 100% {
+      transform: translateY(-50%) translateX(0);
+    }
+    50% {
+      transform: translateY(-50%) translateX(10px);
+    }
+  }
+}
